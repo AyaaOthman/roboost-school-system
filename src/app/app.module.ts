@@ -10,6 +10,8 @@ import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SignupComponent,
     SigninComponent,
     NotFoundComponent,
-
     NavComponent,
     FooterComponent,
     
@@ -26,7 +27,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    DashboardModule
+    DashboardModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
