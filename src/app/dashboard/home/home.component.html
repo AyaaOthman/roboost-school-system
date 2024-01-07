@@ -1,1 +1,23 @@
-<p>home works</p>
+<section class="container my-2">
+  <h2>Students Data</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Email</th>
+        <th scope="col">NationalID</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of studentsArr">
+      <tr>
+        <td>{{ student.Name }}</td>
+        <td>{{ student.Mobile }}</td>
+        <td>{{ student.Email }}</td>
+        <td>{{ student.NationalID }}</td>
+        <td>{{ student.Age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
