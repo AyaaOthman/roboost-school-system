@@ -5,17 +5,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
 import { EditComponent } from './edit/edit.component';
 import { LayoutComponent } from './layout/layout.component';
-
-
+import { NavComponent } from '../shared/nav/nav.component';
 @NgModule({
-  declarations: [
-    HomeComponent,
-    EditComponent,
-    LayoutComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule
-  ]
+  declarations: [HomeComponent, EditComponent, LayoutComponent, NavComponent],
+  imports: [CommonModule, DashboardRoutingModule],
 })
-export class DashboardModule { }
+export class DashboardModule {}

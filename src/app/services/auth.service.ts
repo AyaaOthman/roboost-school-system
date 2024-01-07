@@ -23,9 +23,15 @@ export class AuthService {
   isAuthorized(): boolean {
     const authorized = localStorage.getItem('auth');
     if (authorized) {
-      console.log('authorized', authorized);
       return true;
     }
     return false;
+  }
+  setLogOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('auth');
+    window.location.reload();
+
+    this.loggedIn.next(false);
   }
 }
