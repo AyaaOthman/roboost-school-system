@@ -27,6 +27,9 @@ export class SigninComponent {
       this.authService.userLogin(data).subscribe({
         next: (res) => {
           if (res.Success) {
+            const token = res.Data;
+            const authorized = res.IsAuthorized;
+            this.authService.setLoggedIn(token, authorized);
             this.toaster.success('تم تسجيل الدخول بنجاح');
 
             this.router.navigate(['dashboard']);
