@@ -10,8 +10,10 @@ import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import {  ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     NavComponent,
     FooterComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -29,9 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     DashboardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
