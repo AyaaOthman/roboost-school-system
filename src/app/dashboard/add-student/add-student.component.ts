@@ -45,6 +45,7 @@ export class AddStudentComponent {
       const data = this.addStudentForm.value;
       this.studentService.AddStudent(data).subscribe({
         next: (res) => {
+          this.modalService.dismissAll();
           this.toaster.success(res.Message);
         },
         error: (err) => {

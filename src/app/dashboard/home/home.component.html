@@ -22,7 +22,7 @@
         <td>{{ student.Age }}</td>
         <td role="button"><fa-icon [icon]="edit"></fa-icon></td>
         <td role="button">
-          <fa-icon [icon]="del" style="color: red"></fa-icon>
+          <app-del-student [studentID]="student.ID"></app-del-student>
         </td>
       </tr>
     </tbody>

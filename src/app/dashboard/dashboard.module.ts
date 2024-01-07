@@ -10,12 +10,13 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [HomeComponent, EditComponent, LayoutComponent, NavComponent],
+  declarations: [EditComponent, LayoutComponent, NavComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     AddStudentComponent,
     FontAwesomeModule,
+    HomeComponent,
   ],
 })
 export class DashboardModule {}
