@@ -20,6 +20,10 @@
         <td>{{ student.Email }}</td>
         <td>{{ student.NationalID }}</td>
         <td>{{ student.Age }}</td>
+        <td role="button"><fa-icon [icon]="edit"></fa-icon></td>
+        <td role="button">
+          <fa-icon [icon]="del" style="color: red"></fa-icon>
+        </td>
       </tr>
     </tbody>
   </table>
