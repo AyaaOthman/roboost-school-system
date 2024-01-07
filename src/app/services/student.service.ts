@@ -12,4 +12,7 @@ export class StudentService {
   getAllStudents(): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}Student/Get`);
   }
+  AddStudent(data: any): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}Student/POST`, data);
+  }
 }

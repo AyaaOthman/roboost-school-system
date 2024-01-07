@@ -1,0 +1,173 @@
+<button class="btn btn-success" (click)="open(content)">Add New Student</button>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add New Student</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addStudentForm" (ngSubmit)="onSubmit()">
+      <div class="d-flex justify-content-between">
+        <div class="form-outline mb-4">
+          <label class="form-label" for="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            formControlName="firstName"
+            [class.border-danger]="
+              addStudentForm.get('firstName')?.invalid &&
+              (addStudentForm.get('firstName')?.touched ||
+                addStudentForm.get('firstName')?.dirty ||
+                isSubmitted)
+            "
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              addStudentForm.get('firstName')?.invalid &&
+              (addStudentForm.get('firstName')?.touched ||
+                addStudentForm.get('firstName')?.dirty ||
+                isSubmitted)
+            "
+            >Student Name is required and must start with capital letter and at
+            least 3 characters
+          </span>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            class="form-control"
+            formControlName="lastName"
+            [class.border-danger]="
+              addStudentForm.get('lastName')?.invalid &&
+              (addStudentForm.get('lastName')?.touched ||
+                addStudentForm.get('lastName')?.dirty ||
+                isSubmitted)
+            "
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              addStudentForm.get('lastName')?.invalid &&
+              (addStudentForm.get('lastName')?.touched ||
+                addStudentForm.get('lastName')?.dirty ||
+                isSubmitted)
+            "
+            >Student Name is required and must start with capital letter and at
+            least 3 characters
+          </span>
+        </div>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="mobile">Mobile</label>
+        <input
+          type="tel"
+          id="mobile"
+          class="form-control"
+          formControlName="Mobile"
+          [class.border-danger]="
+            addStudentForm.get('Mobile')?.invalid &&
+            (addStudentForm.get('Mobile')?.touched ||
+              addStudentForm.get('Mobile')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addStudentForm.get('Mobile')?.invalid &&
+            (addStudentForm.get('Mobile')?.touched ||
+              addStudentForm.get('Mobile')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required
+        </span>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="Email"
+          [class.border-danger]="
+            addStudentForm.get('Email')?.invalid &&
+            (addStudentForm.get('Email')?.touched ||
+              addStudentForm.get('Email')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addStudentForm.get('Email')?.invalid &&
+            (addStudentForm.get('Email')?.touched ||
+              addStudentForm.get('Email')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required, please insert valid email
+        </span>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="NationalID">National ID</label>
+        <input
+          type="text"
+          id="NationalID"
+          class="form-control"
+          formControlName="NationalID"
+          [class.border-danger]="
+            addStudentForm.get('NationalID')?.invalid &&
+            (addStudentForm.get('NationalID')?.touched ||
+              addStudentForm.get('NationalID')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addStudentForm.get('NationalID')?.invalid &&
+            (addStudentForm.get('NationalID')?.touched ||
+              addStudentForm.get('NationalID')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required
+        </span>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          class="form-control"
+          formControlName="Age"
+          [class.border-danger]="
+            addStudentForm.get('Age')?.invalid &&
+            (addStudentForm.get('Age')?.touched ||
+              addStudentForm.get('Age')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            addStudentForm.get('Age')?.invalid &&
+            (addStudentForm.get('Age')?.touched ||
+              addStudentForm.get('Age')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-success">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

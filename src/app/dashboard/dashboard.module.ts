@@ -6,8 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { EditComponent } from './edit/edit.component';
 import { LayoutComponent } from './layout/layout.component';
 import { NavComponent } from '../shared/nav/nav.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+
 @NgModule({
   declarations: [HomeComponent, EditComponent, LayoutComponent, NavComponent],
-  imports: [CommonModule, DashboardRoutingModule],
+  imports: [CommonModule, DashboardRoutingModule, AddStudentComponent],
 })
 export class DashboardModule {}
