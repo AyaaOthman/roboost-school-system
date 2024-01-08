@@ -45,9 +45,12 @@ export class AddStudentComponent {
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     Age: ['', Validators.required],
-    Mobile: ['', Validators.required],
+    Mobile: [
+      '',
+      [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)],
+    ],
     Email: ['', [Validators.required, Validators.email]],
-    NationalID: ['', Validators.required],
+    NationalID: ['', [Validators.required, Validators.pattern(/^[0-9]{14}$/)]],
   });
   onSubmit() {
     this.isSubmitted = true;

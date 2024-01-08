@@ -25,7 +25,6 @@ export class EditComponent {
     this.studentService.getStudentByID(this.selectedStuId).subscribe({
       next: (res) => {
         this.selectedStuData = res.Data;
-
         this.editStudentForm.patchValue({
           NameArabic: this.selectedStuData.NameArabic,
           NameEnglish: this.selectedStuData.NameEnglish,
@@ -49,9 +48,13 @@ export class EditComponent {
     FirstName: ['', Validators.required],
     LastName: ['', Validators.required],
     Age: [0, [Validators.required, Validators.pattern(/^\d+$/)]],
-    Mobile: ['', Validators.required],
+    Mobile: [
+      '',
+      [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)],
+    ],
+
     Email: ['', [Validators.required, Validators.email]],
-    NationalID: ['', Validators.required],
+    NationalID: ['', [Validators.required, Validators.pattern(/^[0-9]{14}$/)]],
     ID: [`${Number(this.selectedStuId)}`],
   });
   onSubmit() {

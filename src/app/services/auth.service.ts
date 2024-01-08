@@ -12,9 +12,6 @@ export class AuthService {
   userRegister(data: FormData): Observable<any> {
     return this.httpClient.post(`${this.baseUrl}User/POST`, data);
   }
-  userLogin(data: FormData): Observable<any> {
-    return this.httpClient.post(`${this.baseUrl}User/Login`, data);
-  }
   setLoggedIn(token: string, auth: string) {
     localStorage.setItem('token', token);
     localStorage.setItem('auth', auth);
@@ -27,11 +24,14 @@ export class AuthService {
     }
     return false;
   }
+  userLogin(data: FormData): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}User/Login`, data);
+  }
   setLogOut() {
-    localStorage.removeItem('token');
+    this.loggedIn.next(false);
     localStorage.removeItem('auth');
     window.location.reload();
-
-    this.loggedIn.next(false);
+    localStorage.removeItem('token');
+    return this.httpClient.get(`${this.baseUrl}User/Logout`);
   }
 }

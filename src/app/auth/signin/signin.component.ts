@@ -36,11 +36,9 @@ export class SigninComponent {
           } else {
             this.toaster.fail('اسم المستخدم أوكلمة المرور خاطئة');
           }
-          console.log(res);
         },
         error: (err) => {
           this.toaster.fail('حدث خطأ برجاء المحاولة لاحقًا');
-          console.log(err);
         },
       });
     }

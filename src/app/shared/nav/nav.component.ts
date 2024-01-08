@@ -10,8 +10,13 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavComponent {
   constructor(private authService: AuthService, private router: Router) {}
   logOut() {
-    console.log(5);
-    this.authService.setLogOut();
-    this.router.navigate(['/signin']);
+    this.authService.setLogOut().subscribe({
+      next: (res) => {
+        console.log(res);
+
+        this.router.navigate(['/signin']);
+      },
+      error: (err) => console.log(err),
+    });
   }
 }
