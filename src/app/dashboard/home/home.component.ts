@@ -39,9 +39,10 @@ export class HomeComponent {
     });
   }
   updateStudents(e: any) {
-    console.log('afterDel', e);
+    console.log('update');
     this.studentsArr = e;
   }
+
   ngOnInit() {
     this.getStudents();
   }
