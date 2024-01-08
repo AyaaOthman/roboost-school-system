@@ -2,26 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
-## Development server
+####Deployed Site: [Vercel](https://roboost-school-system.vercel.app/signup)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+####Project structure and organization.
+project is formed of 2 modules with routing (auth - dashboard) the dashboard is protected by auth guard and have lazy loading by it's own routing
+####Installation instructions.
+npm install
+####Explanation of code structure.
+A) Auth Module:
+contain sign up and sign in components
+B) Dashboard Module:
+contains
+1- Main Component: getting all students data
+2- Search Component: handling search
+3- Edit Component: to open edit page and update student data
+4- Delete Component
+5- Add Component
+6- layout to handel diffrent routing
+c) Services:
+1- Auth to handel login - logout -signup
+2- student: to handel get-add-del-edit
+D) guard:
+to protect routs
 
-## Code scaffolding
+####How to run the application locally.
+npm install
+ng serve -o
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+####additional libraries or dependencies used.
+Font Awesome
+Bootstrap
+Ngx-toaster
