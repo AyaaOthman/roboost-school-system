@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { AddStudentComponent } from '../add-student/add-student.component';
 import { RouterModule } from '@angular/router';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     AddStudentComponent,
     RouterModule,
+    SearchComponent,
   ],
   standalone: true,
 })

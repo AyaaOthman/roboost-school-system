@@ -6,3 +6,9 @@ export interface Student {
   NationalID: string;
   Age: number;
 }
+export interface EditStudent extends Student {
+  FirstName: string;
+  LastName: string;
+  NameArabic: string;
+  NameEnglish: string;
+}

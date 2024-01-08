@@ -1,4 +1,7 @@
 <section class="container my-2">
+  <div class="my-4">
+    <app-search></app-search>
+  </div>
   <div class="d-flex justify-content-between align-items-center my-4">
     <h2>Students Data</h2>
     <app-add-student
@@ -23,7 +26,7 @@
         <td>{{ student.NationalID }}</td>
         <td>{{ student.Age }}</td>
         <td role="button">
-          <a href="dashboard/edit/:{{ student.ID }}"
+          <a href="dashboard/edit/{{ student.ID }}"
             ><fa-icon [icon]="edit"></fa-icon
           ></a>
         </td>

@@ -8,6 +8,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { NavComponent } from '../shared/nav/nav.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [EditComponent, LayoutComponent, NavComponent],
@@ -17,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AddStudentComponent,
     FontAwesomeModule,
     HomeComponent,
+    ReactiveFormsModule,
   ],
 })
 export class DashboardModule {}
