@@ -3,17 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EditComponent } from './edit/edit.component';
 
-const routes: Routes = [{path:'', redirectTo:'home', pathMatch:'full'}, {
-  path: 'home',
-  component: HomeComponent,
-},
-{
-  path: 'edit',
-  component: EditComponent,
-},];
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'edit/:id',
+    component: EditComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

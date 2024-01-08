@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, TemplateRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  Output,
+  TemplateRef,
+} from '@angular/core';
 import {
   FormBuilder,
   ReactiveFormsModule,
@@ -23,8 +30,10 @@ import { Student } from 'src/app/interfaces/student.interface';
 export class DelStudentComponent {
   @Input() studentID: number;
   @Input() studentsArr: Student[];
+  @Output() updateStudents = new EventEmitter<Student[]>();
   private modalService = inject(NgbModal);
   del = faTrash;
+  students: Student[];
   constructor(
     private studentService: StudentService,
     private toaster: ToasterService
@@ -38,6 +47,14 @@ export class DelStudentComponent {
       next: (res) => {
         this.modalService.dismissAll();
         this.toaster.success(res.Message);
+        this.studentService.getAllStudents().subscribe({
+          next: (res) => {
+            this.updateStudents.emit((this.students = res.Data));
+          },
+          error: (err) => {
+            this.toaster.fail(err.Message);
+          },
+        });
       },
       error: (err) => {
         this.toaster.fail(err.Message);

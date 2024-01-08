@@ -1,7 +1,9 @@
 <section class="container my-2">
   <div class="d-flex justify-content-between align-items-center my-4">
     <h2>Students Data</h2>
-    <app-add-student></app-add-student>
+    <app-add-student
+      (updateStudents)="updateStudents($event)"
+    ></app-add-student>
   </div>
   <table class="table table-striped">
     <thead>
@@ -20,9 +22,16 @@
         <td>{{ student.Email }}</td>
         <td>{{ student.NationalID }}</td>
         <td>{{ student.Age }}</td>
-        <td role="button"><fa-icon [icon]="edit"></fa-icon></td>
         <td role="button">
-          <app-del-student [studentID]="student.ID"></app-del-student>
+          <a href="dashboard/edit/:{{ student.ID }}"
+            ><fa-icon [icon]="edit"></fa-icon
+          ></a>
+        </td>
+        <td role="button">
+          <app-del-student
+            [studentID]="student.ID"
+            (updateStudents)="updateStudents($event)"
+          ></app-del-student>
         </td>
       </tr>
     </tbody>

@@ -6,6 +6,7 @@ import { DelStudentComponent } from '../del-student/del-student.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { AddStudentComponent } from '../add-student/add-student.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { AddStudentComponent } from '../add-student/add-student.component';
     FontAwesomeModule,
     CommonModule,
     AddStudentComponent,
+    RouterModule,
   ],
   standalone: true,
 })
@@ -33,6 +35,10 @@ export class HomeComponent {
         console.log(err);
       },
     });
+  }
+  updateStudents(e: any) {
+    console.log('afterDel', e);
+    this.studentsArr = e;
   }
   ngOnInit() {
     this.getStudents();

@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, TemplateRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Output,
+  TemplateRef,
+} from '@angular/core';
 import {
   FormBuilder,
   ReactiveFormsModule,
@@ -7,6 +13,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Student } from 'src/app/interfaces/student.interface';
 import { StudentService } from 'src/app/services/student.service';
 import { ToasterService } from 'src/app/services/toaster.service';
 @Component({
@@ -17,6 +24,8 @@ import { ToasterService } from 'src/app/services/toaster.service';
   styleUrls: ['./add-student.component.css'],
 })
 export class AddStudentComponent {
+  @Output() updateStudents = new EventEmitter<Student[]>();
+
   private modalService = inject(NgbModal);
   constructor(
     private formBuilder: FormBuilder,
@@ -24,6 +33,8 @@ export class AddStudentComponent {
     private toaster: ToasterService
   ) {}
   isSubmitted = false;
+  students: Student[];
+
   //modal open
   open(content: TemplateRef<any>) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
@@ -47,6 +58,14 @@ export class AddStudentComponent {
         next: (res) => {
           this.modalService.dismissAll();
           this.toaster.success(res.Message);
+          this.studentService.getAllStudents().subscribe({
+            next: (res) => {
+              this.updateStudents.emit((this.students = res.Data));
+            },
+            error: (err) => {
+              this.toaster.fail(err.Message);
+            },
+          });
         },
         error: (err) => {
           this.toaster.fail(err.Message);
