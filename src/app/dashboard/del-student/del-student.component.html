@@ -1,0 +1,22 @@
+<fa-icon [icon]="del" style="color: red" (click)="open(content)"></fa-icon>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Remove Student</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>Are You sure You want to delete student?</p>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-danger" (click)="delStudent()">Delete</button>
+      <button class="btn btn-dark" (click)="modal.close('Save click')">
+        Cancel
+      </button>
+    </div>
+  </div>
+</ng-template>

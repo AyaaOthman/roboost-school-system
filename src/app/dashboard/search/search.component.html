@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center align-items-center gap-2">
+  <p class="fw-bold mb-0"><fa-icon [icon]="search"></fa-icon> Search</p>
+  <input
+    class="form-control py-1 w-75"
+    type="text"
+    placeholder="Search by student name, age, national ID, or Mobile"
+    aria-label="Search"
+    [(ngModel)]="searchInput"
+    (input)="handelSearch()"
+  />
+</div>

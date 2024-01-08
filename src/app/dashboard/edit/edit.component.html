@@ -1,0 +1,221 @@
+<section class="container my-2">
+  <h2>Edit Student Record</h2>
+  <div
+    style="background-color: #eee"
+    class="p-4 my-2 rounded-3 d-flex justify-content-around align-items-center"
+  >
+    <form [formGroup]="editStudentForm" (ngSubmit)="onSubmit()">
+      <div class="d-flex justify-content-center align-items-center gap-4">
+        <div class="form-outline mb-1">
+          <label class="form-label" for="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            formControlName="FirstName"
+            [class.border-danger]="
+              editStudentForm.get('FirstName')?.invalid &&
+              (editStudentForm.get('FirstName')?.touched ||
+                editStudentForm.get('FirstName')?.dirty ||
+                isSubmitted)
+            "
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              editStudentForm.get('FirstName')?.invalid &&
+              (editStudentForm.get('FirstName')?.touched ||
+                editStudentForm.get('FirstName')?.dirty ||
+                isSubmitted)
+            "
+            >Student Name is required and must start with capital letter and at
+            least 3 characters
+          </span>
+        </div>
+        <div class="form-outline mb-1">
+          <label class="form-label" for="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            class="form-control"
+            formControlName="LastName"
+            [class.border-danger]="
+              editStudentForm.get('LastName')?.invalid &&
+              (editStudentForm.get('LastName')?.touched ||
+                editStudentForm.get('LastName')?.dirty ||
+                isSubmitted)
+            "
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              editStudentForm.get('LastName')?.invalid &&
+              (editStudentForm.get('LastName')?.touched ||
+                editStudentForm.get('LastName')?.dirty ||
+                isSubmitted)
+            "
+            >Student Name is required and must start with capital letter and at
+            least 3 characters
+          </span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center gap-4">
+        <div class="form-outline mb-1">
+          <label class="form-label" for="arabicName">Arabic Name</label>
+          <input
+            type="text"
+            id="arabicName"
+            class="form-control"
+            formControlName="NameArabic"
+            [class.border-danger]="
+              editStudentForm.get('NameArabic')?.invalid &&
+              (editStudentForm.get('NameArabic')?.touched ||
+                editStudentForm.get('NameArabic')?.dirty ||
+                isSubmitted)
+            "
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              editStudentForm.get('NameArabic')?.invalid &&
+              (editStudentForm.get('NameArabic')?.touched ||
+                editStudentForm.get('NameArabic')?.dirty ||
+                isSubmitted)
+            "
+            >Student Name is required and must start with capital letter and at
+            least 3 characters
+          </span>
+        </div>
+        <div class="form-outline mb-1">
+          <label class="form-label" for="englishName">English Name</label>
+          <input
+            type="text"
+            id="englishName"
+            class="form-control"
+            formControlName="NameEnglish"
+            [class.border-danger]="
+              editStudentForm.get('NameEnglish')?.invalid &&
+              (editStudentForm.get('NameEnglish')?.touched ||
+                editStudentForm.get('NameEnglish')?.dirty ||
+                isSubmitted)
+            "
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              editStudentForm.get('NameEnglish')?.invalid &&
+              (editStudentForm.get('NameEnglish')?.touched ||
+                editStudentForm.get('NameEnglish')?.dirty ||
+                isSubmitted)
+            "
+            >Student Name is required and must start with capital letter and at
+            least 3 characters
+          </span>
+        </div>
+      </div>
+      <div class="form-outline mb-1">
+        <label class="form-label" for="mobile">Mobile</label>
+        <input
+          type="tel"
+          id="mobile"
+          class="form-control"
+          formControlName="Mobile"
+          [class.border-danger]="
+            editStudentForm.get('Mobile')?.invalid &&
+            (editStudentForm.get('Mobile')?.touched ||
+              editStudentForm.get('Mobile')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            editStudentForm.get('Mobile')?.invalid &&
+            (editStudentForm.get('Mobile')?.touched ||
+              editStudentForm.get('Mobile')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required
+        </span>
+      </div>
+      <div class="form-outline mb-1">
+        <label class="form-label" for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="Email"
+          [class.border-danger]="
+            editStudentForm.get('Email')?.invalid &&
+            (editStudentForm.get('Email')?.touched ||
+              editStudentForm.get('Email')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            editStudentForm.get('Email')?.invalid &&
+            (editStudentForm.get('Email')?.touched ||
+              editStudentForm.get('Email')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required, please insert valid email
+        </span>
+      </div>
+      <div class="form-outline mb-1">
+        <label class="form-label" for="NationalID">National ID</label>
+        <input
+          type="text"
+          id="NationalID"
+          class="form-control"
+          formControlName="NationalID"
+          [class.border-danger]="
+            editStudentForm.get('NationalID')?.invalid &&
+            (editStudentForm.get('NationalID')?.touched ||
+              editStudentForm.get('NationalID')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            editStudentForm.get('NationalID')?.invalid &&
+            (editStudentForm.get('NationalID')?.touched ||
+              editStudentForm.get('NationalID')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required, formed of 14 numbers only
+        </span>
+      </div>
+      <div class="form-outline mb-1">
+        <label class="form-label" for="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          class="form-control"
+          formControlName="Age"
+          [class.border-danger]="
+            editStudentForm.get('Age')?.invalid &&
+            (editStudentForm.get('Age')?.touched ||
+              editStudentForm.get('Age')?.dirty ||
+              isSubmitted)
+          "
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            editStudentForm.get('Age')?.invalid &&
+            (editStudentForm.get('Age')?.touched ||
+              editStudentForm.get('Age')?.dirty ||
+              isSubmitted)
+          "
+          >This Field is required
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-success">Save</button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<section class="container my-2">
+  <div class="my-4">
+    <app-search (updateStudents)="updateStudents($event)"></app-search>
+  </div>
+  <div class="d-flex justify-content-between align-items-center my-4">
+    <h2>Students Data</h2>
+    <app-add-student
+      (updateStudents)="updateStudents($event)"
+    ></app-add-student>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Email</th>
+        <th scope="col">NationalID</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of studentsArr">
+      <tr>
+        <td>{{ student.Name }}</td>
+        <td>{{ student.Mobile }}</td>
+        <td>{{ student.Email }}</td>
+        <td>{{ student.NationalID }}</td>
+        <td>{{ student.Age }}</td>
+        <td role="button">
+          <a href="dashboard/edit/{{ student.ID }}"
+            ><fa-icon [icon]="edit"></fa-icon
+          ></a>
+        </td>
+        <td role="button">
+          <app-del-student
+            [studentID]="student.ID"
+            (updateStudents)="updateStudents($event)"
+          ></app-del-student>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
