@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Student } from 'src/app/interfaces/student.interface';
 import { StudentService } from 'src/app/services/student.service';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { DelStudentComponent } from '../del-student/del-student.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
@@ -27,10 +28,14 @@ export class HomeComponent {
   constructor(private studentService: StudentService) {}
   studentsArr: Student[] = [];
   edit = faPenToSquare;
+  spinner = faSpinner;
+  isLoading: boolean = true;
 
   getStudents() {
     this.studentService.getAllStudents().subscribe({
       next: (res) => {
+        this.isLoading = false;
+
         this.studentsArr = res.Data;
       },
       error: (err) => {

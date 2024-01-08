@@ -18,8 +18,8 @@
         <th scope="col">Age</th>
       </tr>
     </thead>
-    <tbody *ngFor="let student of studentsArr">
-      <tr>
+    <tbody *ngIf="studentsArr.length >= 1; else noStudents">
+      <tr *ngFor="let student of studentsArr">
         <td>{{ student.Name }}</td>
         <td>{{ student.Mobile }}</td>
         <td>{{ student.Email }}</td>
@@ -38,5 +38,6 @@
         </td>
       </tr>
     </tbody>
+    <ng-template #noStudents>No Students Data</ng-template>
   </table>
 </section>
