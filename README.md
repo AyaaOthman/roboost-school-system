@@ -1,14 +1,19 @@
-# RoboostStudentMangmentSystem
+# Roboost Student Mangment System
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
-####Deployed Site: [Vercel](https://roboost-school-system.vercel.app/signup)
+#### Deployed Site: [Vercel](https://roboost-school-system.vercel.app/signup)
 
-####Project structure and organization.
+#### Project structure and organization.
+
 project is formed of 2 modules with routing (auth - dashboard) the dashboard is protected by auth guard and have lazy loading by it's own routing
-####Installation instructions.
+
+#### Installation instructions.
+
 npm install
-####Explanation of code structure.
+
+#### Explanation of code structure.
+
 A) Auth Module:
 contain sign up and sign in components
 B) Dashboard Module:
@@ -25,11 +30,13 @@ c) Services:
 D) guard:
 to protect routs
 
-####How to run the application locally.
+#### How to run the application locally.
+
 npm install
 ng serve -o
 
-####additional libraries or dependencies used.
+#### additional libraries or dependencies used.
+
 Font Awesome
 Bootstrap
 Ngx-toaster
